@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Year Surprise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section id="slide-1" class="screen active-slide">
+        <div class="content">
+            <p class="header-text">open when its</p>
+            <div class="timer">
+                <div class="time-box"><span id="days">00</span><p>days</p></div>
+                <span class="sep">:</span>
+                <div class="time-box"><span id="hours">00</span><p>hours</p></div>
+                <span class="sep">:</span>
+                <div class="time-box"><span id="mins">00</span><p>mins</p></div>
+                <span class="sep">:</span>
+                <div class="time-box"><span id="secs">00</span><p>secs</p></div>
+            </div>
+            <h1 class="new-year-text">new year</h1>
+            <button class="shiny-pink-btn" onclick="nextSlide(1, 2)">NEXT</button>
+        </div>
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbG1kODVvN3B2bnBsbTFpNWQ1d3NwYWRub2JrMmZzb3d4aHM1cXg3eiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/kZqbBT64ECtjy/giphy.gif" class="kitty-corner">
+    </section>
+
+    <section id="slide-2" class="screen hidden">
+        <div class="bg-container">
+            <img src="https://i.pinimg.com/originals/18/da/6d/18da6df7b7aa388a11ab708a7b4ce8f9.gif" class="bg-gif">
+        </div>
+        <div class="content">
+            <h1 class="reveal-message">Happy new year🫠🤭<br>My love🥹❤️</h1>
+            <button class="shiny-pink-btn" onclick="nextSlide(2, 3)">NEXT</button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<section id="slide-3" class="screen hidden">
+    <div class="content">
+        <img src="https://media1.tenor.com/m/_fcpCS_liv8AAAAC/te-amo-alessio-alan-and-alex.gif" class="medium-gif">
+        <p class="question-text">Hello my love🫠❤️!</p>
+        <p class="question-text">i got a surprise for you</p>
+        <div class="btn-group">
+            <button class="shiny-pink-btn small" onclick="nextSlide(3, 5)">YES</button>
+            <button class="shiny-pink-btn small gray" onclick="nextSlide(3, 4)">NO</button>
+        </div>
+    </div>
+</section>
+
+<section id="slide-4" class="screen hidden">
+    <div class="content">
+        <h1 class="bold-title">How dare you!</h1>
+        <img src="https://media1.tenor.com/m/FeuoVxKnarwAAAAd/p1nguen-kitty.gif" class="medium-gif knife-cat">
+        <button class="shiny-pink-btn" onclick="nextSlide(4, 3)">TRY AGAIN</button>
+    </div>
+</section>
+
+<section id="slide-5" class="screen hidden">
+    <div class="content">
+        <p class="question-text">Are you ready?</p>
+        <img src="https://media.tenor.com/7nkPhBs1tWMAAAAi/4.gif" class="medium-gif">
+        <button class="shiny-pink-btn" onclick="nextSlide(5, 6)">YES</button>
+    </div>
+</section>
+<section id="slide-6" class="screen">
+    <div class="content">
+        <h1 class="bold-title">GIFT FOR YOU MY PRETTY BBY🤭🥹</h1>
+        <div class="gift-grid">
+            <div class="gift-item" onclick="openSurprise('memory-heart')">
+                <img src="https://i.pinimg.com/originals/12/89/fd/1289fd299db50a613d213d27969eeabf.gif">
+            </div>
+            <div class="gift-item" onclick="openSurprise('music-player')">
+                <img src="https://i.pinimg.com/originals/12/89/fd/1289fd299db50a613d213d27969eeabf.gif">
+            </div>
+            <div class="gift-item" onclick="openSurprise('compliment-1')">
+                <img src="https://i.pinimg.com/originals/12/89/fd/1289fd299db50a613d213d27969eeabf.gif">
+            </div>
+            <div class="gift-item" onclick="openSurprise('moments-1')">
+                <img src="https://i.pinimg.com/originals/12/89/fd/1289fd299db50a613d213d27969eeabf.gif">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="memory-heart" class="screen hidden">
+    <div class="content">
+         <img src="https://scontent.fdel1-8.fna.fbcdn.net/v/t1.15752-9/605349526_1369876881816371_1957598514306086879_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=0024fc&_nc_ohc=eO0pOv6exGAQ7kNvwHKKZPs&_nc_oc=Adlv3ecXsRIZjpKpAg2KXwcryjGdRH1xspsZibuqjn_hI2S8CLlcOFbjntVSx7giu0gUBRJSr8gxfySbFOjaL5t7&_nc_ad=z-m&_nc_cid=1174&_nc_zt=23&_nc_ht=scontent.fdel1-8.fna&oh=03_Q7cD4QGdZ1AJcf7ToFNHbVoP8TncbTdb9C9BG_HHi_7qSF3n-A&oe=697C4E5F" class="medium-gif">
+        <p class="question-text">Memory Heart</p>
+         <p class="question-text">I love youuuuu❤️🥹</p>
+         <button class="shiny-pink-btn" onclick="closeSurprise('memory-heart')">BACK TO GIFTS</button>
+    </div>
+</section>
+
+<section id="music-player" class="screen hidden">
+    <div class="content">
+        <div class="vinyl-wrapper">
+            <div class="vinyl-disc">
+                <img src="https://scontent.fdel1-3.fna.fbcdn.net/v/t1.15752-9/605514675_1249148710417875_5033455375000036731_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=0024fc&_nc_ohc=Adplh45SfLQQ7kNvwHQhKee&_nc_oc=AdmBkiUEtk6GBjNVj5ac7D0BCBDJlGOHKs1Zi6tLydrXQsB6VwTvJtFTNvUhUE9UxeHFt89odu2dtQ0DEcZ0yh6v&_nc_ad=z-m&_nc_cid=1174&_nc_zt=23&_nc_ht=scontent.fdel1-3.fna&oh=03_Q7cD4QH_UMX2adN8SJtjGBzrxfNA11dfDsd5ukAO_K5kfv0Xew&oe=697C7F52" alt="Our Photo" class="vinyl-center-img">
+            </div>
+        </div>
+        
+        <p class="question-text">Our Favorite Song</p>
+
+        <div class="spotify-widget-container">
+            <iframe style="border-radius:12px" 
+            <iframe data-testid="embed-iframe" style="border-radius:12px"
+            src="https://open.spotify.com/embed/track/0bYDMpQ94LnF38FiOlc8K9?utm_source=generator"
+                  width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay;
+                   clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+            </iframe>
+        </div>
+
+        <button class="shiny-pink-btn" onclick="closeSurprise('music-player')">BACK</button>
+    </div>
+</section>
+
+
+<section id="compliment-1" class="screen hidden">
+    <div class="content">
+        <img src="https://i.pinimg.com/736x/14/c9/d6/14c9d6de852194dfde94e286e9e76343.jpg" class="medium-gif">
+        <p class="question-text">I'm your #1 Fan</p>
+        <button class="shiny-pink-btn" onclick="nextSubSlide('compliment-1', 'compliment-2')">NEXT</button>
+    </div>  
+</section>
+
+<section id="compliment-2" class="screen hidden">
+    <div class="content">
+        <img src="https://i.pinimg.com/736x/c6/ac/96/c6ac967df3b10249afedc5d737160638.jpg" class="medium-gif">
+        <p class="question-text">Thank you for existing</p>
+        <button class="shiny-pink-btn" onclick="nextSubSlide('compliment-2', 'compliment-3')">NEXT</button>
+    </div>
+</section>
+
+<section id="compliment-3" class="screen hidden">
+    <div class="content">
+        <img src="https://media1.tenor.com/m/zXvHwRKqgEoAAAAC/kawaii-kitty-emri.gif" class="medium-gif">
+        <p class="question-text">I am so proud of you</p>
+        <button class="shiny-pink-btn" onclick="nextSubSlide('compliment-3', 'compliment-4')">NEXT</button>
+    </div>
+</section>
+
+<section id="compliment-4" class="screen hidden">
+    <div class="content">
+        <img src="https://media1.tenor.com/m/F2IQnCtxTewAAAAC/milk-and-mocha-im-here-for-you.gif" class="medium-gif">
+        <p class="question-text">I am always with you</p>
+        <button class="shiny-pink-btn" onclick="closeSurprise('compliment-4')">BACK TO GIFTS</button>
+    </div>
+</section>
+
+<section id="moments-1" class="screen hidden">
+    <div class="content">
+        <img src="https://scontent.fdel1-3.fna.fbcdn.net/v/t1.15752-9/605413813_1237449571594193_7901109908209949535_n.png?stp=dst-png_p480x480&_nc_cat=111&ccb=1-7&_nc_sid=0024fc&_nc_ohc=tihe3Oarw08Q7kNvwHpfkeg&_nc_oc=AdlyucWBk-5TC6isHfDIEGgWxNgGe_8G18XiYO_3wpUxwpcYf_3s5yMb79Bqb2UoKCK4LN6Wvvg2QnQoLryftd_f&_nc_ad=z-m&_nc_cid=1174&_nc_zt=23&_nc_ht=scontent.fdel1-3.fna&oh=03_Q7cD4QE8yk_v2vnSnMMneOFU40eYFK9OggsqIOYjogT38YouAQ&oe=697C5AC1" class="medium-gif">
+        <p class="question-text">Best Moments</p>
+        <button class="shiny-pink-btn" onclick="closeSurprise('moments-1')">BACK TO GIFTS</button>
+    </div>
+</section>

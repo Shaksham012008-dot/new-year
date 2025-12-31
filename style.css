@@ -1,0 +1,300 @@
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+
+    body { background: white; overflow: hidden; width: 100vw; height: 100vh; }
+
+    .screen {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100vw; height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        background: white; /* Solid background for Slide 1 */
+    }
+
+    .hidden { display: none !important; }
+    .active-slide { display: flex !important; z-index: 10; }
+
+    /* Background for Slide 2 */
+    #slide-2 { background: black; }
+    .bg-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+    .bg-gif { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
+
+    /* Content Styling */
+    .content { text-align: center; z-index: 10; }
+    .header-text { font-size: 1.5rem; margin-bottom: 10px; color: #333; }
+
+    /* Timer - Massive and Bold */
+    .timer { display: flex; align-items: center; justify-content: center; gap: 15px; }
+    .time-box span { font-size: 6.5rem; font-weight: 900; color: black; line-height: 1; }
+    .time-box p { font-size: 0.9rem; font-weight: 700; color: #666; margin-top: 5px; text-transform: uppercase; }
+    .sep { font-size: 4rem; font-weight: 900; color: black; padding-bottom: 20px; }
+
+    /* Typography */
+    .new-year-text { font-size: 3.5rem; font-weight: 400; margin: 40px 0; color: black; }
+    .reveal-message { font-size: 4.5rem; font-weight: 900; color: white; line-height: 1.1; margin-bottom: 40px; }
+
+    /* THE SHINY PINK BUTTON */
+    .shiny-pink-btn {
+        background: #ffb6c1; /* Specific Pink from video */
+        color: white;
+        padding: 15px 65px;
+        border-radius: 50px;
+        border: none;
+        font-size: 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(255, 182, 193, 0.4);
+    }
+
+    /* Shine Sweep Effect */
+    .shiny-pink-btn::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -150%;
+        width: 60px;
+        height: 200%;
+        background: rgba(255, 255, 255, 0.7);
+        transform: rotate(30deg);
+        animation: shine 3s infinite;
+    }
+
+    @keyframes shine {
+        0% { left: -150%; }
+        20% { left: 150%; }
+        100% { left: 150%; }
+    }
+
+    .kitty-corner { position: fixed; bottom: 10px; right: 80px; width: 400px; }
+
+    /* Update the main container for all slides */
+    .content {
+        display: flex;
+        flex-direction: column; /* Forces items to stack: Text -> GIF -> Button */
+        align-items: center;    /* Centers everything horizontally */
+        justify-content: center;/* Centers everything vertically */
+        text-align: center;
+        width: 100%;
+        min-height: 100vh;      /* Takes up full screen height to ensure dead-center */
+        gap: 20px;              /* Adds consistent space between all items */
+    }
+
+    /* Make GIFs bigger as requested */
+    .medium-gif { 
+        width: 450px;           /* Increased from 200px */
+        max-width: 85vw;        /* Ensures it doesn't break on mobile */
+        height: auto; 
+        display: block;         /* Removes any hidden spacing */
+        margin: 0 auto;         /* Backup centering */
+    }
+
+    /* Specific size for the knife cat if you want it even larger */
+    .knife-cat { 
+        width: 500px; 
+    } 
+
+    .question-text { 
+        font-size: 2.5rem; 
+        font-weight: 700; 
+        color: #ff4d6d; 
+        margin: 0;
+    }
+
+    .bold-title { 
+        font-size: 3.5rem; 
+        font-weight: 900; 
+        margin: 0; 
+    }
+
+    /* Button Group remains flex for YES/NO side-by-side */
+    .btn-group { 
+        display: flex; 
+        gap: 20px; 
+        justify-content: center; 
+        margin-top: 10px; 
+    }
+
+    .small { padding: 10px 40px !important; font-size: 1.2rem !important; }
+
+    /* The "NO" button */
+    .gray { background: #d1d1d1 !important; box-shadow: none !important; }
+
+    /* Gift Hub Grid Styling */
+    .gift-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        gap: 25px;
+        margin-top: 20px;
+    }
+
+    .gift-item img {
+        width: 200px; /* Big gifts */
+        cursor: pointer;
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .gift-item img:hover {
+        transform: scale(1.1) rotate(5deg);
+    }
+    /* Music Player Slide */
+    .music-player-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    /* THE ROTATING VINYL */
+    .vinyl-wrapper {
+        perspective: 1000px;
+    }
+
+    .vinyl-disc {
+        width: 220px;
+        height: 220px;
+        background: radial-gradient(circle, #222 30%, #000 70%);
+        border-radius: 50%;
+        border: 5px solid #333;
+        position: relative;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        animation: rotateVinyl 5s linear infinite; /* CONTINUOUS SPIN */
+    }
+
+    .vinyl-center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70px;
+        height: 70px;
+        background: url('https://picsum.photos/70/70?random=21') center/cover;
+        border-radius: 10%;
+        border: 2px solid #000;
+    }
+
+    @keyframes rotateVinyl {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    /* SPOTIFY WIDGET STYLE */
+    .spotify-widget {
+        width: 300px;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 15px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    .song-info {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 10px;
+    }
+
+    .album-art {
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+    }
+
+    .song-details .song-name {
+        font-weight: 700;
+        font-size: 0.9rem;
+        color: #000;
+    }
+
+    .song-details .artist-name {
+        font-size: 0.75rem;
+        color: #666;
+    }
+
+    .play-icon {
+        margin-left: auto;
+        font-size: 1.2rem;
+        color: #1DB954; /* Spotify Green */
+    }
+
+    .progress-bar {
+        width: 100%;
+        height: 4px;
+        background: #e0e0e0;
+        border-radius: 2px;
+    }
+
+    .progress-fill {
+        width: 45%; /* Change this to "play" the progress */
+        height: 100%;
+        background: #1DB954;
+        border-radius: 2px;
+    }
+    /* Make the vinyl disc bigger and circular */
+    .vinyl-disc {
+        width: 250px;
+        height: 250px;
+        background-color: #222;
+        border-radius: 50%;
+        border: 10px solid #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: spin 5s linear infinite; /* Keeps it spinning like the video */
+    }
+
+    .vinyl-center-img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    /* Ensure Spotify widget isn't too wide */
+    .spotify-widget-container {
+        width: 300px;
+        max-width: 90%;
+    }
+
+    .small { padding: 10px 40px !important; font-size: 1.2rem !important; }
+
+    /* Center all slide content vertically and horizontally */
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 20px;
+        width: 300%;
+    }
+
+    /* Ensure all slides occupy full screen and center content */
+    .screen {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #fff;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .hidden { display: none !important; }
